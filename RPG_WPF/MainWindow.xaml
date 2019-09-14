@@ -28,6 +28,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -52,9 +53,10 @@
 
             <Label Grid.Row="5" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
+            
+            <Button Grid.Row="6" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick"/>
 
         </Grid>
-
 
         <Label Grid.Row="1" Grid.Column="1" Content="Datos pantalla actual" Background="Azure"/>
         <Label Grid.Row="2" Grid.Column="0" Content="Inventario y desafíos" Background="Bisque"/>
