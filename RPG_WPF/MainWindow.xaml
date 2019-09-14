@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG_WPF"
         mc:Ignorable="d"
-        Title="Jonatandb RPG" Height="768" Width="1024">
+        Title="Jonatandb RPG" Height="768" Width="1024"
+        FontSize="11pt">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,8 +19,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Menú -->
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Menu" Background="AliceBlue" />
 
+        <!-- Datos del jugador -->
         <Grid Grid.Row="1" Grid.Column="0" Background="Aqua">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -54,12 +57,51 @@
             <Label Grid.Row="5" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
             
-            <Button Grid.Row="6" Grid.Column="1" Content="Add XP" Click="ButtonBase_OnClick"/>
+            <Button Grid.Row="6" Grid.Column="1" Content="Agregar XP" Click="ButtonBase_OnClick"/>
+        </Grid>
+        
+        <!-- Datos pantalla actual -->
+        <Grid Grid.Row="1" Grid.Column="1" Background="Beige">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gainsboro" BorderThickness="1">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                               HorizontalAlignment="Center" 
+                               Text="{Binding CurrentLocation.Name}"/>
+
+                    <Image Grid.Row="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Height="125"
+                           Width="125"
+                           Source="{Binding CurrentLocation.ImageName}"/>
+
+                    <TextBlock Grid.Row="2"
+                               HorizontalAlignment="Center"
+                               Text="{Binding CurrentLocation.Description}"/>
+                </Grid>
+            </Border>
         </Grid>
 
-        <Label Grid.Row="1" Grid.Column="1" Content="Datos pantalla actual" Background="Azure"/>
+        <!-- Inventario y desafíos -->
         <Label Grid.Row="2" Grid.Column="0" Content="Inventario y desafíos" Background="Bisque"/>
+
+        <!-- Controles de combate y movimiento -->
         <Label Grid.Row="2" Grid.Column="1" Content="Controles de combate y movimiento" Background="BlueViolet"/>
 
     </Grid>
