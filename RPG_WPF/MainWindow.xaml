@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Jonatandb RPG" Height="768" Width="1024"
         FontSize="11pt">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -56,8 +59,6 @@
 
             <Label Grid.Row="5" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
-            
-            <Button Grid.Row="6" Grid.Column="1" Content="Agregar XP" Click="ButtonBase_OnClick"/>
         </Grid>
         
         <!-- Datos pantalla actual -->
@@ -103,7 +104,31 @@
         <Label Grid.Row="2" Grid.Column="0" Content="Inventario y desafíos" Background="Bisque"/>
 
         <!-- Controles de combate y movimiento -->
-        <Label Grid.Row="2" Grid.Column="1" Content="Controles de combate y movimiento" Background="BlueViolet"/>
+        <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="255"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="1" Content="Norte" Height="25" Width="65" Margin="10" Click="OnClick_MoveNorth" Visibility="{Binding HasLocationToNorth, Converter={StaticResource BooleanToVisibility}}"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="Oeste" Height="25" Width="65" Margin="10" Click="OnClick_MoveWest" Visibility="{Binding HasLocationToWest, Converter={StaticResource BooleanToVisibility}}"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="Este" Height="25" Width="65" Margin="10" Click="OnClick_MoveEast" Visibility="{Binding HasLocationToEast, Converter={StaticResource BooleanToVisibility}}"/>
+                    <Button Grid.Row="2" Grid.Column="1" Content="Sur" Height="25" Width="65" Margin="10" Click="OnClick_MoveSouth" Visibility="{Binding HasLocationToSouth, Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+        </Grid>
 
     </Grid>
 </Window>
