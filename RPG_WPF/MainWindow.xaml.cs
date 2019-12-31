@@ -1,4 +1,5 @@
-﻿using Engine.ViewModels;
+﻿// https://scottlilly.com/build-a-cwpf-rpg/
+using Engine.ViewModels;
 using System.Windows;
 
 namespace RPG_WPF

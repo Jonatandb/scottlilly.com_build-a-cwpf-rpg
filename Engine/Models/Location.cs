@@ -1,4 +1,5 @@
-﻿using System;
+﻿// https://scottlilly.com/build-a-cwpf-rpg/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

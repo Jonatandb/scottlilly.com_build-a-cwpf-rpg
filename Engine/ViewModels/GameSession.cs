@@ -1,4 +1,5 @@
-﻿using Engine.Factories;
+﻿// https://scottlilly.com/build-a-cwpf-rpg/
+using Engine.Factories;
 using Engine.Models;
 
 namespace Engine.ViewModels

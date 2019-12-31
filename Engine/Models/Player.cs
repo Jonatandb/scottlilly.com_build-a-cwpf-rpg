@@ -1,4 +1,5 @@
-﻿namespace Engine.Models
+﻿// https://scottlilly.com/build-a-cwpf-rpg/
+namespace Engine.Models
 {
     public class Player : BaseNotificationClass
     {

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿// https://scottlilly.com/build-a-cwpf-rpg/
+using System.ComponentModel;
 
 namespace Engine
 {
