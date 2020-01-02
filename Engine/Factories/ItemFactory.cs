@@ -20,11 +20,11 @@ namespace Engine.Factories
         static ItemFactory()
         {
             _standardGameItems = new List<GameItem>();
-            _standardGameItems.Add(new Weapon(1001, "Pointy Stick", 1, 1, 2));
-            _standardGameItems.Add(new Weapon(1002, "Rusty Sword", 5, 1, 3));
+            _standardGameItems.Add(new Weapon(1001, "Palo Punteagudo", 1, 1, 2));
+            _standardGameItems.Add(new Weapon(1002, "Espada Oxidada", 5, 1, 3));
         }
 
-        static GameItem CreateGameItem(int itemTypeId)
+        public static GameItem CreateGameItem(int itemTypeId)
         {
             GameItem standardItem = _standardGameItems.FirstOrDefault(item => item.ItemTypeId == itemTypeId);
             if(standardItem != null)

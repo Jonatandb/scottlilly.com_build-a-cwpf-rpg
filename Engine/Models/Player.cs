@@ -1,4 +1,7 @@
 ﻿// https://scottlilly.com/build-a-cwpf-rpg/
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 namespace Engine.Models
 {
     public class Player : BaseNotificationClass
@@ -67,6 +70,19 @@ namespace Engine.Models
                 _gold = value;
                 OnPropertyChanged( nameof(Gold) );
             }
+        }
+
+        /// <summary>
+        /// An ObservableCollection automatically notifies the UI 
+        /// when objects are added to it, or removed from it. 
+        /// Because of this, we don’t need to call “OnPropertyChanged” 
+        /// every time we modify the item’s in the player’s inventory.
+        /// </summary>
+        public ObservableCollection<GameItem> Inventory { get; set; }
+
+        public Player()
+        {
+            Inventory = new ObservableCollection<GameItem>();
         }
     }
 }

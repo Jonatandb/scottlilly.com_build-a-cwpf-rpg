@@ -31,7 +31,7 @@ namespace Engine.ViewModels
             CurrentPlayer = new Player
                             {
                                 Name = "Jonatandb",
-                                CharacterClass = "Fighter",
+                                CharacterClass = "Luchador",
                                 HitPoints = 10,
                                 Gold = 1000000,
                                 ExperiencePoints = 0,
@@ -41,6 +41,12 @@ namespace Engine.ViewModels
             CurrentWorld = WorldFactory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0,0);
+
+            // Test
+            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
+            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
+            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1002));
+            // End Test
         }
 
         public void MoveNorth()
