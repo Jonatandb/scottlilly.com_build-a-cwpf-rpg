@@ -1,3 +1,5 @@
 .vs
-bin/
-obj/
+Engine/bin/
+Engine/obj/
+RPG_WPF/bin/
+RPG_WPF/obj/

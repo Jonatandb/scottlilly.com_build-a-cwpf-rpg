@@ -1,7 +1,0 @@
-D:\Programacion\C#\RPG_WPF\Engine\bin\Debug\Engine.dll
-D:\Programacion\C#\RPG_WPF\Engine\bin\Debug\Engine.pdb
-D:\Programacion\C#\RPG_WPF\Engine\obj\Debug\Engine.csprojAssemblyReference.cache
-D:\Programacion\C#\RPG_WPF\Engine\obj\Debug\Engine.g.resources
-D:\Programacion\C#\RPG_WPF\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
-D:\Programacion\C#\RPG_WPF\Engine\obj\Debug\Engine.dll
-D:\Programacion\C#\RPG_WPF\Engine\obj\Debug\Engine.pdb
