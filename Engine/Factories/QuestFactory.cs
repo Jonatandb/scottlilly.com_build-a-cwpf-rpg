@@ -1,10 +1,7 @@
 ﻿// https://scottlilly.com/build-a-cwpf-rpg/lesson-06-1-creating-the-quest-factory/
-using System;
+using Engine.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Engine.Models;
 
 namespace Engine.Factories
 {

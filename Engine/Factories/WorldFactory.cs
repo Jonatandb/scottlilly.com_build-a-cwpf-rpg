@@ -39,6 +39,7 @@ namespace Engine.Factories
             newWorld.AddLocation(0, 1, "Cabaña del herbolario",
                 "Ves una pequeña cabaña, con plantas secas que caen del techo.",
                 "/Engine;component/Images/Locations/HerbalistsHut.png");
+            newWorld.LocationAt(0, 1).QuestsAvailableHere.Add(QuestFactory.GetQuestByID(1));
 
             newWorld.AddLocation(0, 2, "Jardín del herbolario",
                 "Aquí hay muchas plantas, con serpientes escondidas detrás de ellas.",

@@ -1,6 +1,7 @@
 ﻿// https://scottlilly.com/build-a-cwpf-rpg/
 using Engine.Factories;
 using Engine.Models;
+using System.Linq;
 
 namespace Engine.ViewModels
 {
@@ -23,6 +24,8 @@ namespace Engine.ViewModels
                 OnPropertyChanged(nameof(HasLocationToSouth));
                 OnPropertyChanged(nameof(HasLocationToWest));
                 OnPropertyChanged(nameof(HasLocationToEast));
+
+                GivePlayerQuestsAtLocation();
             }
         }
 
@@ -102,6 +105,17 @@ namespace Engine.ViewModels
             get
             {
                 return CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate) != null;
+            }
+        }
+
+        private void GivePlayerQuestsAtLocation()
+        {
+            foreach(Quest quest in CurrentLocation.QuestsAvailableHere)
+            {
+                if(!CurrentPlayer.Quests.Any(q => q.PlayerQuest.ID == quest.ID))
+                {
+                    CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                }
             }
         }
     }
